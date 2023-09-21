@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "jUOqMbFSQbEvV242C61UMSEfPwcEQ3wEVrgvX8zM0EqTy2juuiXTWZL4IBnipAgWiRJMrEm7wbSFmCGF4+0hqg==",
+  "success": true,
+  "projectFilePath": "/Users/sahib.bhatia/RiderProjects/my-console-application/ConsoleApp/ConsoleApp.csproj",
+  "expectedPackageFiles": [
+    "/Users/sahib.bhatia/.nuget/packages/microsoft.netcore.app.ref/6.0.20/microsoft.netcore.app.ref.6.0.20.nupkg.sha512",
+    "/Users/sahib.bhatia/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.20/microsoft.aspnetcore.app.ref.6.0.20.nupkg.sha512",
+    "/Users/sahib.bhatia/.nuget/packages/microsoft.netcore.app.host.osx-x64/6.0.20/microsoft.netcore.app.host.osx-x64.6.0.20.nupkg.sha512"
+  ],
+  "logs": []
+}
