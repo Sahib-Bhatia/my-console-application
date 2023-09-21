@@ -1,19 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-//
-// Console.WriteLine("Hello, World!");
-
-using System.Net.Http.Headers;
-using System.Text.Json;
+﻿using System.Text.Json;
 using ConsoleApp;
+using RestSharp;
 
-using HttpClient client = new();
-client.DefaultRequestHeaders.Accept.Clear();
-client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
-client.DefaultRequestHeaders.Add("User-Agent",".NET Foundation Repository Reporter");
+var client = new RestClient(); 
 
-var repositories = await ProcessRepositoriesAsync(client);
+var repositories = ProcessRepositoriesAsync(client);
 
-foreach (var repository in repositories ?? Enumerable.Empty<Repository>())
+foreach (var repository in repositories)
 {
     Console.WriteLine($"Name: {repository.Name}");
     Console.WriteLine($"Homepage: {repository.Homepage}");
@@ -24,11 +17,12 @@ foreach (var repository in repositories ?? Enumerable.Empty<Repository>())
     Console.WriteLine();
 }
 
-static async Task<List<Repository>> ProcessRepositoriesAsync (HttpClient client)
+static List<Repository> ProcessRepositoriesAsync (RestClient client)
 {
-    await using Stream stream = await client.GetStreamAsync("https://api.github.com/orgs/dotnet/repos");
-    var repositories = await JsonSerializer.DeserializeAsync<List<Repository>>(stream);
+    var request = new RestRequest("https://api.github.com/orgs/dotnet/repos");
+    var response = client.ExecuteGet(request);
+    var data = JsonSerializer.Deserialize<List<Repository>>(response.Content!);
 
-    return repositories ?? new();
+    return data ?? new List<Repository>();
 }
 
