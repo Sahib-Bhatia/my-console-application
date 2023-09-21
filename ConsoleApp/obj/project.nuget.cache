@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "dSrkWZt8jP4NQGuAAr+SmeolQQxKRya6+OK20KSfrsXg9NVwBL66cHydqwUgYLR44yRks6bhMMZC03TgfvhoDg==",
+  "dgSpecHash": "skZfVIIrvo/b/usZ/PF7kq83n1tJhQT75BVtxkSauyDCZGZYHP58YL44VnoooqXdpWDvaaBbZYJDIDeg+gt+WQ==",
   "success": true,
   "projectFilePath": "/Users/sahib.bhatia/RiderProjects/my-console-application/ConsoleApp/ConsoleApp.csproj",
   "expectedPackageFiles": [
     "/Users/sahib.bhatia/.nuget/packages/restsharp/110.2.1-alpha.0.13/restsharp.110.2.1-alpha.0.13.nupkg.sha512",
+    "/Users/sahib.bhatia/.nuget/packages/serilog/3.0.2-dev-02056/serilog.3.0.2-dev-02056.nupkg.sha512",
+    "/Users/sahib.bhatia/.nuget/packages/serilog.sinks.console/4.2.0-dev-00918/serilog.sinks.console.4.2.0-dev-00918.nupkg.sha512",
+    "/Users/sahib.bhatia/.nuget/packages/serilog.sinks.file/5.0.1-dev-00947/serilog.sinks.file.5.0.1-dev-00947.nupkg.sha512",
     "/Users/sahib.bhatia/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "/Users/sahib.bhatia/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
     "/Users/sahib.bhatia/.nuget/packages/system.text.json/7.0.3/system.text.json.7.0.3.nupkg.sha512"
