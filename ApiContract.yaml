@@ -1,0 +1,130 @@
+openapi: 3.0.3
+info:
+  title: Swagger - OpenAPI 3.0
+  description: |-
+    This is a simple endpoint to get users by id
+  version: 1.0.11
+tags:
+  - name: user
+    description: Operations about user
+paths:
+  /user/{id}:
+    get:
+      tags:
+        - user
+      summary: Get user by id
+      description: 'Get user by id'
+      operationId: getUserById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: Invalid username supplied
+        '404':
+          description: User not found
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1
+        name:
+          type: string
+          example: theUser
+        email:
+          type: string
+          example: john@email.com
+        phone:
+          type: string
+          example: '12345'
+        assets:
+          type: object
+          properties:
+            currentAccountBalance:
+              type: number
+            savingAccountBalance:
+              type: number
+            investmentPortfolioValue:
+              type: number
+          example: {
+            currentAccountBalance: 1000,
+            savingAccountBalance: 1500,
+            investmentPortfolioValue: 750
+          }
+        trading:
+          type: object
+          properties:
+            stocks:
+              type: array
+              items:
+                type: object
+                properties:
+                  company:
+                    type: string
+                  quantity:
+                    type: number
+                  currentPrice:
+                    type: number
+            bonds:
+              type: array
+              items:
+                type: object
+                properties:
+                  bond:
+                    type: string
+                  quantity:
+                    type: number
+                  currentPrice:
+                    type: number
+            options:
+              type: array
+              items:
+                type: object
+                properties:
+                  contract:
+                    type: string
+                  quantity:
+                    type: number
+                  currentPrice:
+                    type: number
+          example: {
+            stocks: [
+              {
+                company: "APPLE",
+                quantity: 100,
+                currentPrice: 150
+              },
+              {
+                company: "GOOGLE",
+                quantity: 50,
+                currentPrice: 250
+              }
+            ],
+            bonds: [
+              {
+                bond: "ABC00123DE456",
+                quantity: 10,
+                currentPrice: 1050
+              }
+            ],
+            options: [
+              {
+                contract: "DEF123FGH0032",
+                quantity: 5,
+                currentPrice: 15
+              }
+            ]
+          }
